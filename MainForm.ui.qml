@@ -23,7 +23,7 @@ Rectangle {
             x: 13
             y: 19
             //text: qsTr("Text")
-            text: vueObjetCpt.cptQML[1][1]
+            text: vueObjetCpt.cptQML11
             focus: true
             font.pixelSize: 12
         }
@@ -45,7 +45,7 @@ Rectangle {
             id: text2
             x: 13
             y: 19
-            text: vueObjetCpt.cptQML[1][2]
+            text: vueObjetCpt.cptQML12
             focus: true
             font.pixelSize: 12
         }
@@ -69,7 +69,7 @@ Rectangle {
             y: 19
             //text: qsTr("Text")
             focus: true
-            text: vueObjetCpt.cptQML[1][3]
+            text: vueObjetCpt.cptQML13
             font.pixelSize: 12
         }
     }
@@ -90,7 +90,7 @@ Rectangle {
             id: text4
             x: 13
             y: 19
-            text: vueObjetCpt.cptQML[1][4]
+            text: vueObjetCpt.cptQML14
             focus: true
             font.pixelSize: 12
         }
@@ -112,7 +112,7 @@ Rectangle {
             id: text5
             x: 13
             y: 19
-            text: vueObjetCpt.cptQML[2][1]
+            text: vueObjetCpt.cptQML21
             focus: true
             font.pixelSize: 12
         }
@@ -134,7 +134,7 @@ Rectangle {
             id: text6
             x: 13
             y: 19
-            text: vueObjetCpt.cptQML[2][2]
+            text: vueObjetCpt.cptQML22
             focus: true
             font.pixelSize: 12
         }
@@ -156,7 +156,7 @@ Rectangle {
             id: text7
             x: 13
             y: 19
-            text: vueObjetCpt.cptQML[2][3]
+            text: vueObjetCpt.cptQML23
             focus: true
             font.pixelSize: 12
         }
@@ -178,7 +178,7 @@ Rectangle {
             id: text8
             x: 13
             y: 19
-            text: vueObjetCpt.cptQML[2][4]
+            text: vueObjetCpt.cptQML24
             focus: true
             font.pixelSize: 12
         }
@@ -200,7 +200,7 @@ Rectangle {
             id: text9
             x: 13
             y: 19
-            text: vueObjetCpt.cptQML[3][1]
+            text: vueObjetCpt.cptQML31
             focus: true
             font.pixelSize: 12
         }
@@ -222,7 +222,7 @@ Rectangle {
             id: text10
             x: 13
             y: 19
-            text: vueObjetCpt.cptQML[3][2]
+            text: vueObjetCpt.cptQML32
             focus: true
             font.pixelSize: 12
         }
@@ -244,7 +244,7 @@ Rectangle {
             id: text11
             x: 13
             y: 19
-            text: vueObjetCpt.cptQML[3][3]
+            text: vueObjetCpt.cptQML33
             focus: true
             font.pixelSize: 12
         }
@@ -266,7 +266,7 @@ Rectangle {
             id: text12
             x: 13
             y: 19
-            text: vueObjetCpt.cptQML[3][4]
+            text: vueObjetCpt.cptQML34
             focus: true
             font.pixelSize: 12
         }
@@ -288,7 +288,7 @@ Rectangle {
             id: text13
             x: 13
             y: 19
-            text: vueObjetCpt.cptQML[4][1]
+            text: vueObjetCpt.cptQML41
             focus: true
             font.pixelSize: 12
         }
@@ -310,7 +310,7 @@ Rectangle {
             id: text14
             x: 13
             y: 19
-            text: vueObjetCpt.cptQML[4][2]
+            text: vueObjetCpt.cptQML42
             focus: true
             font.pixelSize: 12
         }
@@ -332,7 +332,7 @@ Rectangle {
             id: text15
             x: 13
             y: 19
-            text: vueObjetCpt.cptQML[4][3]
+            text: vueObjetCpt.cptQML43
             focus: true
             font.pixelSize: 12
         }
@@ -354,7 +354,7 @@ Rectangle {
             id: text16
             x: 13
             y: 19
-            text: vueObjetCpt.cptQML[4][4]
+            text: vueObjetCpt.cptQML44
             focus: true
             font.pixelSize: 12
         }

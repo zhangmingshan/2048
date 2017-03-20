@@ -14,10 +14,16 @@ Window {
         Keys.onPressed: {
           switch (event.key) {
             case Qt.Key_Up:
-              vueObjetCpt.increment();
+              vueObjetCpt.VersLeHaut();
               break;
             case Qt.Key_Down:
-              vueObjetCpt.decrement();
+              vueObjetCpt.VersLeBas();
+              break;
+            case Qt.Key_Left:
+              vueObjetCpt.VersLaGauche();
+              break;
+            case Qt.Key_Right:
+              vueObjetCpt.VersLaDroit();
               break;
           }
         }
