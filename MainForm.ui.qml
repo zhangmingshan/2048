@@ -11,8 +11,10 @@ Rectangle {
         x: 54
         y: 86
         width: 50
-        height: 50
-        color: "#aaffff"
+        height: 52
+        color: "#baffa8"
+        radius: 10
+        border.width: 3
         anchors.verticalCenterOffset: -50
         anchors.verticalCenter: parent.verticalCenter
         anchors.horizontalCenterOffset: -75
@@ -23,9 +25,17 @@ Rectangle {
             x: 13
             y: 19
             //text: qsTr("Text")
-            text: vueObjetCpt.cptQML11
+            text: vueObjetCpt.cptQML[0]
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.verticalCenter: parent.verticalCenter
+            verticalAlignment: Text.AlignVCenter
+            horizontalAlignment: Text.AlignHCenter
+            font.family: "Tahoma"
+            style: Text.Raised
+            font.bold: true
+            textFormat: Text.AutoText
             focus: true
-            font.pixelSize: 12
+            font.pixelSize: 16
         }
     }
 
@@ -35,7 +45,9 @@ Rectangle {
         y: 85
         width: 50
         height: 50
-        color: "#aaffff"
+        color: "#baffa8"
+        radius: 10
+        border.width: 3
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.verticalCenter: parent.verticalCenter
         anchors.horizontalCenterOffset: -25
@@ -45,9 +57,17 @@ Rectangle {
             id: text2
             x: 13
             y: 19
-            text: vueObjetCpt.cptQML12
+            text: vueObjetCpt.cptQML[1]
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.verticalCenter: parent.verticalCenter
+            verticalAlignment: Text.AlignVCenter
+            horizontalAlignment: Text.AlignHCenter
+            font.family: "Tahoma"
+            style: Text.Raised
+            font.bold: true
+            textFormat: Text.AutoText
             focus: true
-            font.pixelSize: 12
+            font.pixelSize: 16
         }
     }
 
@@ -57,7 +77,9 @@ Rectangle {
         y: 93
         width: 50
         height: 50
-        color: "#aaffff"
+        color: "#baffa8"
+        radius: 10
+        border.width: 3
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.verticalCenter: parent.verticalCenter
         anchors.horizontalCenterOffset: 25
@@ -69,8 +91,16 @@ Rectangle {
             y: 19
             //text: qsTr("Text")
             focus: true
-            text: vueObjetCpt.cptQML13
-            font.pixelSize: 12
+            text: vueObjetCpt.cptQML[2]
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.verticalCenter: parent.verticalCenter
+            verticalAlignment: Text.AlignVCenter
+            horizontalAlignment: Text.AlignHCenter
+            font.family: "Tahoma"
+            style: Text.Raised
+            font.bold: true
+            textFormat: Text.AutoText
+            font.pixelSize: 16
         }
     }
 
@@ -80,7 +110,9 @@ Rectangle {
         y: 76
         width: 50
         height: 50
-        color: "#aaffff"
+        color: "#baffa8"
+        radius: 10
+        border.width: 3
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.verticalCenter: parent.verticalCenter
         anchors.horizontalCenterOffset: 75
@@ -90,9 +122,17 @@ Rectangle {
             id: text4
             x: 13
             y: 19
-            text: vueObjetCpt.cptQML14
+            text: vueObjetCpt.cptQML[3]
             focus: true
-            font.pixelSize: 12
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.verticalCenter: parent.verticalCenter
+            verticalAlignment: Text.AlignVCenter
+            horizontalAlignment: Text.AlignHCenter
+            font.family: "Tahoma"
+            style: Text.Raised
+            font.bold: true
+            textFormat: Text.AutoText
+            font.pixelSize: 16
         }
     }
 
@@ -102,7 +142,9 @@ Rectangle {
         y: 79
         width: 50
         height: 50
-        color: "#aaffff"
+        color: "#baffa8"
+        radius: 10
+        border.width: 3
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.verticalCenter: parent.verticalCenter
         anchors.horizontalCenterOffset: -75
@@ -112,9 +154,17 @@ Rectangle {
             id: text5
             x: 13
             y: 19
-            text: vueObjetCpt.cptQML21
+            text: vueObjetCpt.cptQML[4]
             focus: true
-            font.pixelSize: 12
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.verticalCenter: parent.verticalCenter
+            verticalAlignment: Text.AlignVCenter
+            horizontalAlignment: Text.AlignHCenter
+            font.family: "Tahoma"
+            style: Text.Raised
+            font.bold: true
+            textFormat: Text.AutoText
+            font.pixelSize: 16
         }
     }
 
@@ -124,7 +174,9 @@ Rectangle {
         y: 81
         width: 50
         height: 50
-        color: "#aaffff"
+        color: "#baffa8"
+        radius: 10
+        border.width: 3
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.verticalCenter: parent.verticalCenter
         anchors.horizontalCenterOffset: -25
@@ -134,9 +186,17 @@ Rectangle {
             id: text6
             x: 13
             y: 19
-            text: vueObjetCpt.cptQML22
+            text: vueObjetCpt.cptQML[5]
             focus: true
-            font.pixelSize: 12
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.verticalCenter: parent.verticalCenter
+            verticalAlignment: Text.AlignVCenter
+            horizontalAlignment: Text.AlignHCenter
+            font.family: "Tahoma"
+            style: Text.Raised
+            font.bold: true
+            textFormat: Text.AutoText
+            font.pixelSize: 16
         }
     }
 
@@ -146,7 +206,9 @@ Rectangle {
         y: 90
         width: 50
         height: 50
-        color: "#aaffff"
+        color: "#baffa8"
+        radius: 10
+        border.width: 3
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.verticalCenter: parent.verticalCenter
         anchors.horizontalCenterOffset: 25
@@ -156,9 +218,17 @@ Rectangle {
             id: text7
             x: 13
             y: 19
-            text: vueObjetCpt.cptQML23
+            text: vueObjetCpt.cptQML[6]
             focus: true
-            font.pixelSize: 12
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.verticalCenter: parent.verticalCenter
+            verticalAlignment: Text.AlignVCenter
+            horizontalAlignment: Text.AlignHCenter
+            font.family: "Tahoma"
+            style: Text.Raised
+            font.bold: true
+            textFormat: Text.AutoText
+            font.pixelSize: 16
         }
     }
 
@@ -168,7 +238,9 @@ Rectangle {
         y: 93
         width: 50
         height: 50
-        color: "#aaffff"
+        color: "#baffa8"
+        radius: 10
+        border.width: 3
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.verticalCenter: parent.verticalCenter
         anchors.horizontalCenterOffset: 75
@@ -178,9 +250,17 @@ Rectangle {
             id: text8
             x: 13
             y: 19
-            text: vueObjetCpt.cptQML24
+            text: vueObjetCpt.cptQML[7]
             focus: true
-            font.pixelSize: 12
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.verticalCenter: parent.verticalCenter
+            verticalAlignment: Text.AlignVCenter
+            horizontalAlignment: Text.AlignHCenter
+            font.family: "Tahoma"
+            style: Text.Raised
+            font.bold: true
+            textFormat: Text.AutoText
+            font.pixelSize: 16
         }
     }
 
@@ -190,7 +270,9 @@ Rectangle {
         y: 78
         width: 50
         height: 50
-        color: "#aaffff"
+        color: "#baffa8"
+        radius: 10
+        border.width: 3
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.verticalCenter: parent.verticalCenter
         anchors.horizontalCenterOffset: -75
@@ -200,9 +282,17 @@ Rectangle {
             id: text9
             x: 13
             y: 19
-            text: vueObjetCpt.cptQML31
+            text: vueObjetCpt.cptQML[8]
             focus: true
-            font.pixelSize: 12
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.verticalCenter: parent.verticalCenter
+            verticalAlignment: Text.AlignVCenter
+            horizontalAlignment: Text.AlignHCenter
+            font.family: "Tahoma"
+            style: Text.Raised
+            font.bold: true
+            textFormat: Text.AutoText
+            font.pixelSize: 16
         }
     }
 
@@ -212,7 +302,9 @@ Rectangle {
         y: 83
         width: 50
         height: 50
-        color: "#aaffff"
+        color: "#baffa8"
+        radius: 10
+        border.width: 3
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.verticalCenter: parent.verticalCenter
         anchors.horizontalCenterOffset: -25
@@ -222,9 +314,17 @@ Rectangle {
             id: text10
             x: 13
             y: 19
-            text: vueObjetCpt.cptQML32
+            text: vueObjetCpt.cptQML[9]
             focus: true
-            font.pixelSize: 12
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.verticalCenter: parent.verticalCenter
+            verticalAlignment: Text.AlignVCenter
+            horizontalAlignment: Text.AlignHCenter
+            font.family: "Tahoma"
+            style: Text.Raised
+            font.bold: true
+            textFormat: Text.AutoText
+            font.pixelSize: 16
         }
     }
 
@@ -234,7 +334,9 @@ Rectangle {
         y: 87
         width: 50
         height: 50
-        color: "#aaffff"
+        color: "#baffa8"
+        radius: 10
+        border.width: 3
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.verticalCenter: parent.verticalCenter
         anchors.horizontalCenterOffset: 25
@@ -244,9 +346,17 @@ Rectangle {
             id: text11
             x: 13
             y: 19
-            text: vueObjetCpt.cptQML33
+            text: vueObjetCpt.cptQML[10]
             focus: true
-            font.pixelSize: 12
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.verticalCenter: parent.verticalCenter
+            verticalAlignment: Text.AlignVCenter
+            horizontalAlignment: Text.AlignHCenter
+            font.family: "Tahoma"
+            style: Text.Raised
+            font.bold: true
+            textFormat: Text.AutoText
+            font.pixelSize: 16
         }
     }
 
@@ -256,7 +366,9 @@ Rectangle {
         y: 76
         width: 50
         height: 50
-        color: "#aaffff"
+        color: "#baffa8"
+        radius: 10
+        border.width: 3
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.verticalCenter: parent.verticalCenter
         anchors.horizontalCenterOffset: 75
@@ -266,9 +378,17 @@ Rectangle {
             id: text12
             x: 13
             y: 19
-            text: vueObjetCpt.cptQML34
+            text: vueObjetCpt.cptQML[11]
             focus: true
-            font.pixelSize: 12
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.verticalCenter: parent.verticalCenter
+            verticalAlignment: Text.AlignVCenter
+            horizontalAlignment: Text.AlignHCenter
+            font.family: "Tahoma"
+            style: Text.Raised
+            font.bold: true
+            textFormat: Text.AutoText
+            font.pixelSize: 16
         }
     }
 
@@ -278,7 +398,9 @@ Rectangle {
         y: 75
         width: 50
         height: 50
-        color: "#aaffff"
+        color: "#baffa8"
+        radius: 10
+        border.width: 3
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.verticalCenter: parent.verticalCenter
         anchors.horizontalCenterOffset: -75
@@ -288,9 +410,17 @@ Rectangle {
             id: text13
             x: 13
             y: 19
-            text: vueObjetCpt.cptQML41
+            text: vueObjetCpt.cptQML[12]
             focus: true
-            font.pixelSize: 12
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.verticalCenter: parent.verticalCenter
+            verticalAlignment: Text.AlignVCenter
+            horizontalAlignment: Text.AlignHCenter
+            font.family: "Tahoma"
+            style: Text.Raised
+            font.bold: true
+            textFormat: Text.AutoText
+            font.pixelSize: 16
         }
     }
 
@@ -300,7 +430,9 @@ Rectangle {
         y: 79
         width: 50
         height: 50
-        color: "#aaffff"
+        color: "#baffa8"
+        radius: 10
+        border.width: 3
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.verticalCenter: parent.verticalCenter
         anchors.horizontalCenterOffset: -25
@@ -310,9 +442,17 @@ Rectangle {
             id: text14
             x: 13
             y: 19
-            text: vueObjetCpt.cptQML42
+            text: vueObjetCpt.cptQML[13]
             focus: true
-            font.pixelSize: 12
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.verticalCenter: parent.verticalCenter
+            verticalAlignment: Text.AlignVCenter
+            horizontalAlignment: Text.AlignHCenter
+            font.family: "Tahoma"
+            style: Text.Raised
+            font.bold: true
+            textFormat: Text.AutoText
+            font.pixelSize: 16
         }
     }
 
@@ -322,7 +462,9 @@ Rectangle {
         y: 76
         width: 50
         height: 50
-        color: "#aaffff"
+        color: "#baffa8"
+        radius: 10
+        border.width: 3
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.verticalCenter: parent.verticalCenter
         anchors.horizontalCenterOffset: 25
@@ -332,9 +474,17 @@ Rectangle {
             id: text15
             x: 13
             y: 19
-            text: vueObjetCpt.cptQML43
+            text: vueObjetCpt.cptQML[14]
             focus: true
-            font.pixelSize: 12
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.verticalCenter: parent.verticalCenter
+            verticalAlignment: Text.AlignVCenter
+            horizontalAlignment: Text.AlignHCenter
+            font.family: "Tahoma"
+            style: Text.Raised
+            font.bold: true
+            textFormat: Text.AutoText
+            font.pixelSize: 16
         }
     }
 
@@ -344,7 +494,9 @@ Rectangle {
         y: 79
         width: 50
         height: 50
-        color: "#aaffff"
+        color: "#baffa8"
+        radius: 10
+        border.width: 3
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.verticalCenter: parent.verticalCenter
         anchors.horizontalCenterOffset: 75
@@ -354,9 +506,17 @@ Rectangle {
             id: text16
             x: 13
             y: 19
-            text: vueObjetCpt.cptQML44
+            text: vueObjetCpt.cptQML[15]
             focus: true
-            font.pixelSize: 12
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.verticalCenter: parent.verticalCenter
+            verticalAlignment: Text.AlignVCenter
+            horizontalAlignment: Text.AlignHCenter
+            font.family: "Tahoma"
+            style: Text.Raised
+            font.bold: true
+            textFormat: Text.AutoText
+            font.pixelSize: 16
         }
     }
 }

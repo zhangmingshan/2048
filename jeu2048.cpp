@@ -12,71 +12,14 @@ Jeu::Jeu(QObject *parent) : QObject(parent)
     cptChanged();
 }
 
-QString Jeu::readChiffre11()
-{
-    return QString::number(T[0][0]);
-}
-QString Jeu::readChiffre12()
-{
-    return QString::number(T[0][1]);
-}
-QString Jeu::readChiffre13()
-{
-    return QString::number(T[0][2]);
-}
-QString Jeu::readChiffre14()
-{
-    return QString::number(T[0][3]);
-}
-QString Jeu::readChiffre21()
-{
-    return QString::number(T[1][0]);
-}
-QString Jeu::readChiffre22()
-{
-    return QString::number(T[1][1]);
-}
-QString Jeu::readChiffre23()
-{
-    return QString::number(T[1][2]);
-}
-QString Jeu::readChiffre24()
-{
-    return QString::number(T[1][3]);
-}
-QString Jeu::readChiffre31()
-{
-    return QString::number(T[2][0]);
-}
-QString Jeu::readChiffre32()
-{
-    return QString::number(T[2][1]);
-}
-QString Jeu::readChiffre33()
-{
-    return QString::number(T[2][2]);
-}
-QString Jeu::readChiffre34()
-{
-    return QString::number(T[2][3]);
-}
-QString Jeu::readChiffre41()
-{
-    return QString::number(T[3][0]);
-}
-QString Jeu::readChiffre42()
-{
-    return QString::number(T[3][1]);
-}
-QString Jeu::readChiffre43()
-{
-    return QString::number(T[3][2]);
-}
-QString Jeu::readChiffre44()
-{
-    return QString::number(T[3][3]);
-}
+QList<int> Jeu::readChiffre(){
+   QList <int> test;
+    for(int i=0; i<L; i++)
+            for(int j=0; j<C; j++)
+                test.append(T[i][j]);
+    return QList<int>(test);
 
+}
 
 //void Jeu::Aleatoire()
 //{
