@@ -3,98 +3,24 @@
 
 Jeu::Jeu(QObject *parent) : QObject(parent)
 {
-    T = new int*[L];
-        for(int i=0; i<L; i++)
-            T[i] = new int[C];
+    InitJeu();
+}
+
+QList<int> Jeu::readChiffre(){
+   QList <int> test;
     for(int i=0; i<L; i++)
             for(int j=0; j<C; j++)
-                T[i][j]=0;
-    cptChanged();
-}
+                test.append(T[i][j]);
+    return QList<int>(test);
 
-QString Jeu::readChiffre11()
-{
-    return QString::number(T[0][0]);
-}
-QString Jeu::readChiffre12()
-{
-    return QString::number(T[0][1]);
-}
-QString Jeu::readChiffre13()
-{
-    return QString::number(T[0][2]);
-}
-QString Jeu::readChiffre14()
-{
-    return QString::number(T[0][3]);
-}
-QString Jeu::readChiffre21()
-{
-    return QString::number(T[1][0]);
-}
-QString Jeu::readChiffre22()
-{
-    return QString::number(T[1][1]);
-}
-QString Jeu::readChiffre23()
-{
-    return QString::number(T[1][2]);
-}
-QString Jeu::readChiffre24()
-{
-    return QString::number(T[1][3]);
-}
-QString Jeu::readChiffre31()
-{
-    return QString::number(T[2][0]);
-}
-QString Jeu::readChiffre32()
-{
-    return QString::number(T[2][1]);
-}
-QString Jeu::readChiffre33()
-{
-    return QString::number(T[2][2]);
-}
-QString Jeu::readChiffre34()
-{
-    return QString::number(T[2][3]);
-}
-QString Jeu::readChiffre41()
-{
-    return QString::number(T[3][0]);
-}
-QString Jeu::readChiffre42()
-{
-    return QString::number(T[3][1]);
-}
-QString Jeu::readChiffre43()
-{
-    return QString::number(T[3][2]);
-}
-QString Jeu::readChiffre44()
-{
-    return QString::number(T[3][3]);
 }
 
 
-//void Jeu::Aleatoire()
-//{
-//    int i,j;
-//    do{
-//        srand((unsigned)time(NULL));
-//        i = rand()%X;
-//        j = rand()%Y;
-//    }
-//    while (T[i][j]!=0);
-//    T[i][j] = 2;
-//}
-
-int Jeu::apparition_des_nombres2(){
+int Jeu::apparition_des_nombres1(){
     int a=rand()%L;
     int b=rand()%C;
     if(T[a][b]==0){
-        T[a][b]=2;
+        T[a][b]=1;
         return 1;
     }
     return 0;
@@ -102,15 +28,26 @@ int Jeu::apparition_des_nombres2(){
 
 void Jeu::InitJeu()
 {
+    T = new int*[L];
+    for(int i=0; i<L; i++)
+        T[i] = new int[C];
+    for(int i=0; i<L; i++)
+            for(int j=0; j<C; j++)
+                T[i][j]=0;
+    cptChanged();
+}
+
+void Jeu::Start()
+{
     srand(time(NULL));
         for(int i=0;i<500;i++){
-            int indice=apparition_des_nombres2();
+            int indice=apparition_des_nombres1();
             if(indice==1)
                 break;
         }
     srand(time(NULL));
         for(int i=0;i<500;i++){
-            int indice2=apparition_des_nombres2();
+            int indice2=apparition_des_nombres1();
             if(indice2==1)
                 break;
     }
@@ -133,7 +70,10 @@ int Jeu::AjouteVersLeHaut(){
         for(int i=0;i<L;i++){
             if(T[i][j]!=0){
                 T[k][j]=T[i][j];
-                if(k!=i)T[i][j]=0;
+                if(k!=i){
+                    T[i][j]=0;
+                    indice = 1;
+                }
                 k++;}
         }
     }
@@ -151,30 +91,42 @@ int Jeu::AjouteVersLeHaut(){
 }
 
 void Jeu::VersLeHaut(){
-    if(!Plein()){
-        srand(time(NULL));
-        for(int i=0;i<500;i++){
-            int indice=apparition_des_nombres2();
-            if(indice==1)
-                break;
-        }}
-    if(FiniJeu()){
-        cout<<'fini';
-        return;}
-    for(int i=0;i<5000;i++){
-        int indice=AjouteVersLeHaut();
-        if(indice==0)
-            break;
-    }
+    int indice = 0;
     for(int j=0;j<C;j++){
         int k=0;
         for(int i=0;i<L;i++){
             if(T[i][j]!=0){
                 T[k][j]=T[i][j];
-                if(k!=i)T[i][j]=0;
+                if(k!=i){
+                    T[i][j]=0;
+                    indice = 1;}
                 k++;}
         }
     }
+    if(!Plein()){
+        srand(time(NULL));
+//        for(int i=0;i<500;i++){
+//            int indice=apparition_des_nombres1();
+//            if(indice==1)
+//                break;
+//        }
+        indice = AjouteVersLeHaut();
+        if(indice){
+            apparition_des_nombres1();
+        }
+
+    }
+
+    if(FiniJeu()){
+        cout<<'fini';
+        return;}
+
+//    for(int i=0;i<5000;i++){
+//        int indice=AjouteVersLeHaut();
+//        if(indice==0)
+//            break;
+//    }
+
     cptChanged();
 }
 
@@ -199,7 +151,10 @@ int Jeu::AjouteVersLeBas(){
         for(int i=L-1;i>=0;i--){
             if(T[i][j]!=0){
                 T[k][j]=T[i][j];
-                if(k!=i)T[i][j]=0;
+                if(k!=i){
+                    T[i][j]=0;
+                    indice = 1;
+                }
                 k--;}
         }
     }
@@ -219,19 +174,24 @@ int Jeu::AjouteVersLeBas(){
 void Jeu::VersLeBas(){
     if(!Plein()){
         srand(time(NULL));
-        for(int i=0;i<500;i++){
-            int indice=apparition_des_nombres2();
-            if(indice==1)
-                break;
-        }}
+//        for(int i=0;i<500;i++){
+//            int indice=apparition_des_nombres1();
+//            if(indice==1)
+//                break;
+//        }
+        int indice = AjouteVersLeBas();
+        if(indice == 1)
+            apparition_des_nombres1();
+    }
     if(FiniJeu()){
         cout<<'fini';
         return;}
-    for(int i=0;i<5000;i++){
-        int indice=AjouteVersLeBas();
-        if(indice==0)
-            break;
-}
+    AjouteVersLeBas();
+//    for(int i=0;i<5000;i++){
+//        int indice=AjouteVersLeBas();
+//        if(indice==0)
+//            break;
+//}
     for(int j=0;j<C;j++){
         int k=L-1;
         for(int i=L-1;i>=0;i--){
@@ -251,7 +211,10 @@ int Jeu::AjouteVersLaDroit(){
         for(int j=C-1;j>=0;j--){
             if(T[i][j]!=0){
                 T[i][k]=T[i][j];
-                if(k!=j)T[i][j]=0;
+                if(k!=j){
+                    T[i][j]=0;
+                    indice = 1;
+                }
                 k--;}
         }
     }
@@ -273,19 +236,24 @@ int Jeu::AjouteVersLaDroit(){
 void Jeu::VersLaDroit(){
     if(!Plein()){
         srand(time(NULL));
-        for(int i=0;i<500;i++){
-            int indice=apparition_des_nombres2();
-            if(indice==1)
-                break;
-        }}
+//        for(int i=0;i<500;i++){
+//            int indice=apparition_des_nombres1();
+//            if(indice==1)
+//                break;
+//        }
+        int indice = AjouteVersLaDroit();
+        if(indice == 1)
+            apparition_des_nombres1();
+    }
     if(FiniJeu()){
         cout<<'fini';
         return;}
-    for(int i=0;i<5000;i++){
-        int indice=AjouteVersLaDroit();
-        if(indice==0)
-            break;
-    }
+    AjouteVersLaDroit();
+//    for(int i=0;i<5000;i++){
+//        int indice=AjouteVersLaDroit();
+//        if(indice==0)
+//            break;
+//    }
     for(int i=0;i<L;i++){
         int k=C-1;
         for(int j=C-1;j>=0;j--){
@@ -305,7 +273,10 @@ int Jeu::AjouteVersLaGauche(){
         for(int j=0;j<C;j++){
             if(T[i][j]!=0){
                 T[i][k]=T[i][j];
-                if(j!=k)T[i][j]=0;
+                if(j!=k){
+                    T[i][j]=0;
+                    indice = 1;
+                }
                 k++;}
         }
     }
@@ -325,19 +296,24 @@ int Jeu::AjouteVersLaGauche(){
 void Jeu::VersLaGauche(){
     if(!Plein()){
         srand(time(NULL));
-        for(int i=0;i<500;i++){
-            int indice=apparition_des_nombres2();
-            if(indice==1)
-                break;
-        }}
+//        for(int i=0;i<500;i++){
+//            int indice=apparition_des_nombres1();
+//            if(indice==1)
+//                break;
+//        }
+        int indice = AjouteVersLaGauche();
+        if (indice == 1)
+            apparition_des_nombres1();
+    }
     if(FiniJeu()){
         cout<<'fini';
         return;}
-    for(int i=0;i<5000;i++){
-        int indice=AjouteVersLaGauche();
-        if(indice==0)
-            break;
-    }
+    AjouteVersLaGauche();
+//    for(int i=0;i<5000;i++){
+//        int indice=AjouteVersLaGauche();
+//        if(indice==0)
+//            break;
+//    }
     for(int i=0;i<L;i++){
         int k=0;
         for(int j=0;j<C;j++){
