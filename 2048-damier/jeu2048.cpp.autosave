@@ -15,6 +15,15 @@ QList<int> Jeu::readChiffre(){
 
 }
 
+QList<QColor> Jeu::readCouleur(){
+   QList <QColor> test;
+    for(int i=0; i<L; i++)
+            for(int j=0; j<C; j++)
+                test.append(T[i][j]);
+    return QList<QColor>(test);
+
+}
+
 
 int Jeu::apparition_des_nombres1(){
     int a=rand()%L;
