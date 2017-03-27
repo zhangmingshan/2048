@@ -27,6 +27,13 @@ Window {
               break;
           }
         }
-
+        mouseArea1 {
+            onClicked:
+                vueObjetCpt.Start();
+        }
+        mouseArea2 {
+            onClicked:
+                vueObjetCpt.InitJeu();
+        }
     }
 }

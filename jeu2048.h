@@ -6,6 +6,7 @@
 #include <QObject>
 #include <QString>
 #include <QList>
+#include <QColor>
 #include <time.h>
 
 //template<typename T>
@@ -17,6 +18,7 @@ class Jeu:public QObject
 {
     Q_OBJECT
     Q_PROPERTY(QList<int> cptQML READ readChiffre() NOTIFY cptChanged);
+    Q_PROPERTY(QList<QColor> couleur READ readCouleur() NOTIFY cptChanged);
 /*public:
     Jeu(int l, int c, int vm, int value = 0);
     Jeu(const Jeu &D);
@@ -37,11 +39,9 @@ class Jeu:public QObject
 */
 public:
     explicit Jeu(QObject *parent = 0);
-//    Q_INVOKABLE void increment();
-//    Q_INVOKABLE void decrement();
 
     Q_INVOKABLE void InitJeu();
-
+    Q_INVOKABLE void Start();
     Q_INVOKABLE int AjouteVersLeHaut();
     Q_INVOKABLE int AjouteVersLeBas();
     Q_INVOKABLE int AjouteVersLaGauche();
@@ -50,12 +50,12 @@ public:
     Q_INVOKABLE void VersLeBas();
     Q_INVOKABLE void VersLaGauche();
     Q_INVOKABLE void VersLaDroit();
-//    Q_INVOKABLE void Aleatoire();
-    Q_INVOKABLE int apparition_des_nombres2();
+    Q_INVOKABLE int apparition_des_nombres1();
     Q_INVOKABLE int Plein();
     Q_INVOKABLE int FiniJeu();
 
     QList<int> readChiffre();
+    QList<QColor> readCouleur();
 
 
 signals:
@@ -64,20 +64,10 @@ signals:
 public slots:
 
 private:
-
-    // Méthode privée (factorisation  de code)
-    /*void Alloc(int l, int c);
-    void Free();
-    bool sameDimensions (const Jeu &D);*/
-
     int L = 4;
     int C = 4;
     int **T;
-/*protected:
-    int L;
-    int C;
-    int** T;
-    int Max;*/
+    string **Co;
 };
 
 

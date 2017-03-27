@@ -2,5 +2,7 @@
     <qresource prefix="/">
         <file>main.qml</file>
         <file>MainForm.ui.qml</file>
+        <file>pausebutton.png</file>
+        <file>playbuttonb.png</file>
     </qresource>
 </RCC>
