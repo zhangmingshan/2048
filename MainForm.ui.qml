@@ -5,7 +5,6 @@ Rectangle {
 
     width: 360
     height: 360
-    property alias rectangle17: rectangle17
     property alias text14: text14
     property alias rectangle14: rectangle14
     property alias text13: text13
@@ -45,21 +44,6 @@ Rectangle {
     border.width: 0
 
     Rectangle {
-        id: rectangle17
-        x: 73
-        y: 92
-        width: 200
-        height: 201
-        color: "#7fdcff"
-        visible: true
-        clip: false
-        anchors.verticalCenterOffset: 25
-        anchors.horizontalCenterOffset: 0
-        anchors.horizontalCenter: parent.horizontalCenter
-        anchors.verticalCenter: parent.verticalCenter
-    }
-
-    Rectangle {
         id: rectangle1
         x: 54
         y: 86
@@ -67,7 +51,6 @@ Rectangle {
         height: 52
         color: "#baffa8"
         radius: 10
-        border.color: "#0b049d"
         border.width: 3
         anchors.verticalCenterOffset: -50
         anchors.verticalCenter: parent.verticalCenter
@@ -100,7 +83,6 @@ Rectangle {
         width: 50
         height: 50
         color: "#baffa8"
-        border.color: "#0b049d"
         radius: 10
         border.width: 3
         anchors.horizontalCenter: parent.horizontalCenter
@@ -133,7 +115,6 @@ Rectangle {
         width: 50
         height: 50
         color: "#baffa8"
-        border.color: "#0b049d"
         radius: 10
         border.width: 3
         anchors.horizontalCenter: parent.horizontalCenter
@@ -167,7 +148,6 @@ Rectangle {
         width: 50
         height: 50
         color: "#baffa8"
-        border.color: "#0b049d"
         radius: 10
         border.width: 3
         anchors.horizontalCenter: parent.horizontalCenter
@@ -200,7 +180,6 @@ Rectangle {
         width: 50
         height: 50
         color: "#baffa8"
-        border.color: "#0b049d"
         radius: 10
         border.width: 3
         anchors.horizontalCenter: parent.horizontalCenter
@@ -233,7 +212,6 @@ Rectangle {
         width: 50
         height: 50
         color: "#baffa8"
-        border.color: "#0b049d"
         radius: 10
         border.width: 3
         anchors.horizontalCenter: parent.horizontalCenter
@@ -266,7 +244,6 @@ Rectangle {
         width: 50
         height: 50
         color: "#baffa8"
-        border.color: "#0b049d"
         radius: 10
         border.width: 3
         anchors.horizontalCenter: parent.horizontalCenter
@@ -299,7 +276,6 @@ Rectangle {
         width: 50
         height: 50
         color: "#baffa8"
-        border.color: "#0b049d"
         radius: 10
         border.width: 3
         anchors.horizontalCenter: parent.horizontalCenter
@@ -332,7 +308,6 @@ Rectangle {
         width: 50
         height: 50
         color: "#baffa8"
-        border.color: "#0b049d"
         radius: 10
         border.width: 3
         anchors.horizontalCenter: parent.horizontalCenter
@@ -365,7 +340,6 @@ Rectangle {
         width: 50
         height: 50
         color: "#baffa8"
-        border.color: "#0b049d"
         radius: 10
         border.width: 3
         anchors.horizontalCenter: parent.horizontalCenter
@@ -398,7 +372,6 @@ Rectangle {
         width: 50
         height: 50
         color: "#baffa8"
-        border.color: "#0b049d"
         radius: 10
         border.width: 3
         anchors.horizontalCenter: parent.horizontalCenter
@@ -431,7 +404,6 @@ Rectangle {
         width: 50
         height: 50
         color: "#baffa8"
-        border.color: "#0b049d"
         radius: 10
         border.width: 3
         anchors.horizontalCenter: parent.horizontalCenter
@@ -464,7 +436,6 @@ Rectangle {
         width: 50
         height: 50
         color: "#baffa8"
-        border.color: "#0b049d"
         radius: 10
         border.width: 3
         anchors.horizontalCenter: parent.horizontalCenter
@@ -497,7 +468,6 @@ Rectangle {
         width: 50
         height: 50
         color: "#baffa8"
-        border.color: "#0b049d"
         radius: 10
         border.width: 3
         anchors.horizontalCenter: parent.horizontalCenter
@@ -530,7 +500,6 @@ Rectangle {
         width: 50
         height: 50
         color: "#baffa8"
-        border.color: "#0b049d"
         radius: 10
         border.width: 3
         anchors.horizontalCenter: parent.horizontalCenter
@@ -563,7 +532,6 @@ Rectangle {
         width: 50
         height: 50
         color: "#baffa8"
-        border.color: "#0b049d"
         radius: 10
         border.width: 3
         anchors.horizontalCenter: parent.horizontalCenter
@@ -592,37 +560,24 @@ Rectangle {
     Image {
         id: image1
         x: 180
-        y: 327
+        y: 34
         width: 50
         height: 50
-        anchors.verticalCenterOffset: 170
-        anchors.horizontalCenterOffset: 25
-        anchors.horizontalCenter: parent.horizontalCenter
-        anchors.verticalCenter: parent.verticalCenter
         source: "playbuttonb.png"
 
         MouseArea {
             id: mouseArea1
-            x: 0
-            y: 0
             width: 50
             height: 50
-            anchors.horizontalCenterOffset: 2
-            anchors.horizontalCenter: parent.horizontalCenter
-            anchors.verticalCenter: parent.verticalCenter
         }
     }
 
     Image {
         id: image2
         x: 230
-        y: 327
+        y: 34
         width: 50
         height: 50
-        anchors.verticalCenterOffset: 170
-        anchors.horizontalCenterOffset: 75
-        anchors.horizontalCenter: parent.horizontalCenter
-        anchors.verticalCenter: parent.verticalCenter
         source: "pausebutton.png"
 
         MouseArea {
@@ -631,5 +586,4 @@ Rectangle {
             height: 50
         }
     }
-
 }
