@@ -15,6 +15,15 @@ QList<int> Jeu::readChiffre(){
 
 }
 
+QList<QColor> Jeu::readCouleur(){
+   QList <QColor> test;
+    for(int i=0; i<L; i++)
+            for(int j=0; j<C; j++)
+                test.append(T[i][j]);
+    return QList<QColor>(test);
+
+}
+
 
 int Jeu::apparition_des_nombres1(){
     int a=rand()%L;
@@ -81,8 +90,8 @@ int Jeu::AjouteVersLeHaut(){
         for(int i=0;i<L-1;i++){
             if(T[i][j]==0)continue;
             if(T[i][j]==T[i+1][j]){
-                T[i+1][j]=0;
-                T[i][j]=2*T[i][j];
+                T[i][j]=0;
+                T[i+1][j]=2*T[i+1][j];
                 indice=1;
             }
         }
@@ -90,12 +99,8 @@ int Jeu::AjouteVersLeHaut(){
     return indice;
 }
 
-
-
-
-
 void Jeu::VersLeHaut(){
-    int indice=AjouteVersLeHaut();
+    int indice = 0;
     for(int j=0;j<C;j++){
         int k=0;
         for(int i=0;i<L;i++){
@@ -114,7 +119,7 @@ void Jeu::VersLeHaut(){
 //            if(indice==1)
 //                break;
 //        }
-
+        indice = AjouteVersLeHaut();
         if(indice){
             apparition_des_nombres1();
         }
@@ -166,8 +171,8 @@ int Jeu::AjouteVersLeBas(){
         for(int i=L-1;i>0;i--){
             if(T[i][j]==0)continue;
             if(T[i][j]==T[i-1][j]){
-                T[i-1][j]=0;
-                T[i][j]=2*T[i][j];
+                T[i][j]=0;
+                T[i-1][j]=2*T[i-1][j];
                 indice=1;
             }
         }
@@ -176,7 +181,26 @@ int Jeu::AjouteVersLeBas(){
 }
 
 void Jeu::VersLeBas(){
-    int indice=AjouteVersLeBas();
+    if(!Plein()){
+        srand(time(NULL));
+//        for(int i=0;i<500;i++){
+//            int indice=apparition_des_nombres1();
+//            if(indice==1)
+//                break;
+//        }
+        int indice = AjouteVersLeBas();
+        if(indice == 1)
+            apparition_des_nombres1();
+    }
+    if(FiniJeu()){
+        cout<<'fini';
+        return;}
+    AjouteVersLeBas();
+//    for(int i=0;i<5000;i++){
+//        int indice=AjouteVersLeBas();
+//        if(indice==0)
+//            break;
+//}
     for(int j=0;j<C;j++){
         int k=L-1;
         for(int i=L-1;i>=0;i--){
@@ -186,27 +210,6 @@ void Jeu::VersLeBas(){
                 k--;}
         }
     }
-    if(!Plein()){
-        srand(time(NULL));
-//        for(int i=0;i<500;i++){
-//            int indice=apparition_des_nombres1();
-//            if(indice==1)
-//                break;
-//        }
-
-        if(indice == 1)
-            apparition_des_nombres1();
-    }
-    if(FiniJeu()){
-        cout<<'fini';
-        return;}
-
-//    for(int i=0;i<5000;i++){
-//        int indice=AjouteVersLeBas();
-//        if(indice==0)
-//            break;
-//}
-
     cptChanged();
 }
 
@@ -228,8 +231,8 @@ int Jeu::AjouteVersLaDroit(){
         for(int j=C-1;j>0;j--){
             if(T[i][j]==0)continue;
             if(T[i][j]==T[i][j-1]){
-                T[i][j-1]=0;
-                T[i][j]=2*T[i][j];
+                T[i][j]=0;
+                T[i][j-1]=2*T[i][j-1];
                 indice=1;
             }
         }
@@ -240,7 +243,26 @@ int Jeu::AjouteVersLaDroit(){
 }
 
 void Jeu::VersLaDroit(){
-    int indice=AjouteVersLaDroit();
+    if(!Plein()){
+        srand(time(NULL));
+//        for(int i=0;i<500;i++){
+//            int indice=apparition_des_nombres1();
+//            if(indice==1)
+//                break;
+//        }
+        int indice = AjouteVersLaDroit();
+        if(indice == 1)
+            apparition_des_nombres1();
+    }
+    if(FiniJeu()){
+        cout<<'fini';
+        return;}
+    AjouteVersLaDroit();
+//    for(int i=0;i<5000;i++){
+//        int indice=AjouteVersLaDroit();
+//        if(indice==0)
+//            break;
+//    }
     for(int i=0;i<L;i++){
         int k=C-1;
         for(int j=C-1;j>=0;j--){
@@ -250,27 +272,6 @@ void Jeu::VersLaDroit(){
                 k--;}
         }
     }
-    if(!Plein()){
-        srand(time(NULL));
-//        for(int i=0;i<500;i++){
-//            int indice=apparition_des_nombres1();
-//            if(indice==1)
-//                break;
-//        }
-
-        if(indice == 1)
-            apparition_des_nombres1();
-    }
-    if(FiniJeu()){
-        cout<<'fini';
-        return;}
-
-//    for(int i=0;i<5000;i++){
-//        int indice=AjouteVersLaDroit();
-//        if(indice==0)
-//            break;
-//    }
-
     cptChanged();
 }
 
@@ -292,8 +293,8 @@ int Jeu::AjouteVersLaGauche(){
         for(int j=0;j<C;j++){
             if(T[i][j]==0)continue;
             if(T[i][j]==T[i][j+1]){
-                T[i][j+1]=0;
-                T[i][j]=2*T[i][j];
+                T[i][j]=0;
+                T[i][j+1]=2*T[i][j+1];
                 indice=1;
             }
         }
@@ -302,7 +303,26 @@ int Jeu::AjouteVersLaGauche(){
 }
 
 void Jeu::VersLaGauche(){
-    int indice=AjouteVersLaGauche();
+    if(!Plein()){
+        srand(time(NULL));
+//        for(int i=0;i<500;i++){
+//            int indice=apparition_des_nombres1();
+//            if(indice==1)
+//                break;
+//        }
+        int indice = AjouteVersLaGauche();
+        if (indice == 1)
+            apparition_des_nombres1();
+    }
+    if(FiniJeu()){
+        cout<<'fini';
+        return;}
+    AjouteVersLaGauche();
+//    for(int i=0;i<5000;i++){
+//        int indice=AjouteVersLaGauche();
+//        if(indice==0)
+//            break;
+//    }
     for(int i=0;i<L;i++){
         int k=0;
         for(int j=0;j<C;j++){
@@ -312,27 +332,6 @@ void Jeu::VersLaGauche(){
                 k++;}
         }
     }
-    if(!Plein()){
-        srand(time(NULL));
-//        for(int i=0;i<500;i++){
-//            int indice=apparition_des_nombres1();
-//            if(indice==1)
-//                break;
-//        }
-
-        if (indice == 1)
-            apparition_des_nombres1();
-    }
-    if(FiniJeu()){
-        cout<<'fini';
-        return;}
-
-//    for(int i=0;i<5000;i++){
-//        int indice=AjouteVersLaGauche();
-//        if(indice==0)
-//            break;
-//    }
-
     cptChanged();
 }
 

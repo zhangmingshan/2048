@@ -6,8 +6,8 @@
 #include <QObject>
 #include <QString>
 #include <QList>
+#include <QColor>
 #include <time.h>
-
 
 //template<typename T>
 
@@ -18,6 +18,7 @@ class Jeu:public QObject
 {
     Q_OBJECT
     Q_PROPERTY(QList<int> cptQML READ readChiffre() NOTIFY cptChanged);
+    Q_PROPERTY(QList<QColor> couleur READ readCouleur() NOTIFY cptChanged);
 /*public:
     Jeu(int l, int c, int vm, int value = 0);
     Jeu(const Jeu &D);
@@ -54,6 +55,7 @@ public:
     Q_INVOKABLE int FiniJeu();
 
     QList<int> readChiffre();
+    QList<QColor> readCouleur();
 
 
 signals:
@@ -65,6 +67,7 @@ private:
     int L = 4;
     int C = 4;
     int **T;
+    string **Co;
 };
 
 
