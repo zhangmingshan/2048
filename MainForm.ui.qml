@@ -5,6 +5,15 @@ Rectangle {
 
     width: 360
     height: 360
+    property alias text22: text22
+    property alias text21: text21
+    property alias rectangle20: rectangle20
+    property alias text20: text20
+    property alias text19: text19
+    property alias rectangle19: rectangle19
+    property alias text18: text18
+    property alias text17: text17
+    property alias rectangle18: rectangle18
     property alias rectangle17: rectangle17
     property alias text14: text14
     property alias rectangle14: rectangle14
@@ -48,9 +57,10 @@ Rectangle {
         id: rectangle17
         x: 73
         y: 92
-        width: 200
-        height: 201
-        color: "#7fdcff"
+        width: 205
+        height: 205
+        color: "#CAE1FF"
+        radius: 9
         visible: true
         clip: false
         anchors.verticalCenterOffset: 25
@@ -65,10 +75,10 @@ Rectangle {
         y: 86
         width: 50
         height: 52
-        color: "#baffa8"
+        color: vueObjetCpt.couleur[0]
+        border.color: "#CAE1FF"
         radius: 10
-        border.color: "#0b049d"
-        border.width: 3
+        border.width: 2
         anchors.verticalCenterOffset: -50
         anchors.verticalCenter: parent.verticalCenter
         anchors.horizontalCenterOffset: -75
@@ -99,10 +109,10 @@ Rectangle {
         y: 85
         width: 50
         height: 50
-        color: "#baffa8"
-        border.color: "#0b049d"
+        color: vueObjetCpt.couleur[1]
+        border.color: "#CAE1FF"
         radius: 10
-        border.width: 3
+        border.width: 2
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.verticalCenter: parent.verticalCenter
         anchors.horizontalCenterOffset: -25
@@ -132,10 +142,10 @@ Rectangle {
         y: 93
         width: 50
         height: 50
-        color: "#baffa8"
-        border.color: "#0b049d"
+        color: vueObjetCpt.couleur[2]
+        border.color: "#CAE1FF"
         radius: 10
-        border.width: 3
+        border.width: 2
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.verticalCenter: parent.verticalCenter
         anchors.horizontalCenterOffset: 25
@@ -166,10 +176,10 @@ Rectangle {
         y: 76
         width: 50
         height: 50
-        color: "#baffa8"
-        border.color: "#0b049d"
+        color: vueObjetCpt.couleur[3]
+        border.color: "#CAE1FF"
         radius: 10
-        border.width: 3
+        border.width: 2
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.verticalCenter: parent.verticalCenter
         anchors.horizontalCenterOffset: 75
@@ -199,10 +209,10 @@ Rectangle {
         y: 79
         width: 50
         height: 50
-        color: "#baffa8"
-        border.color: "#0b049d"
+        color: vueObjetCpt.couleur[4]
+        border.color: "#CAE1FF"
         radius: 10
-        border.width: 3
+        border.width: 2
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.verticalCenter: parent.verticalCenter
         anchors.horizontalCenterOffset: -75
@@ -232,10 +242,10 @@ Rectangle {
         y: 81
         width: 50
         height: 50
-        color: "#baffa8"
-        border.color: "#0b049d"
+        color: vueObjetCpt.couleur[5]
+        border.color: "#CAE1FF"
         radius: 10
-        border.width: 3
+        border.width: 2
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.verticalCenter: parent.verticalCenter
         anchors.horizontalCenterOffset: -25
@@ -265,10 +275,10 @@ Rectangle {
         y: 90
         width: 50
         height: 50
-        color: "#baffa8"
-        border.color: "#0b049d"
+        color: vueObjetCpt.couleur[6]
+        border.color: "#CAE1FF"
         radius: 10
-        border.width: 3
+        border.width: 2
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.verticalCenter: parent.verticalCenter
         anchors.horizontalCenterOffset: 25
@@ -298,10 +308,10 @@ Rectangle {
         y: 93
         width: 50
         height: 50
-        color: "#baffa8"
-        border.color: "#0b049d"
+        color: vueObjetCpt.couleur[7]
+        border.color: "#CAE1FF"
         radius: 10
-        border.width: 3
+        border.width: 2
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.verticalCenter: parent.verticalCenter
         anchors.horizontalCenterOffset: 75
@@ -331,10 +341,10 @@ Rectangle {
         y: 78
         width: 50
         height: 50
-        color: "#baffa8"
-        border.color: "#0b049d"
+        color: vueObjetCpt.couleur[8]
+        border.color: "#CAE1FF"
         radius: 10
-        border.width: 3
+        border.width: 2
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.verticalCenter: parent.verticalCenter
         anchors.horizontalCenterOffset: -75
@@ -364,10 +374,10 @@ Rectangle {
         y: 83
         width: 50
         height: 50
-        color: "#baffa8"
-        border.color: "#0b049d"
+        color: vueObjetCpt.couleur[9]
+        border.color: "#CAE1FF"
         radius: 10
-        border.width: 3
+        border.width: 2
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.verticalCenter: parent.verticalCenter
         anchors.horizontalCenterOffset: -25
@@ -397,10 +407,10 @@ Rectangle {
         y: 87
         width: 50
         height: 50
-        color: "#baffa8"
-        border.color: "#0b049d"
+        color: vueObjetCpt.couleur[10]
+        border.color: "#CAE1FF"
         radius: 10
-        border.width: 3
+        border.width: 2
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.verticalCenter: parent.verticalCenter
         anchors.horizontalCenterOffset: 25
@@ -430,10 +440,10 @@ Rectangle {
         y: 76
         width: 50
         height: 50
-        color: "#baffa8"
-        border.color: "#0b049d"
+        color: vueObjetCpt.couleur[11]
+        border.color: "#CAE1FF"
         radius: 10
-        border.width: 3
+        border.width: 2
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.verticalCenter: parent.verticalCenter
         anchors.horizontalCenterOffset: 75
@@ -463,10 +473,10 @@ Rectangle {
         y: 75
         width: 50
         height: 50
-        color: "#baffa8"
-        border.color: "#0b049d"
+        color: vueObjetCpt.couleur[12]
+        border.color: "#CAE1FF"
         radius: 10
-        border.width: 3
+        border.width: 2
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.verticalCenter: parent.verticalCenter
         anchors.horizontalCenterOffset: -75
@@ -496,10 +506,10 @@ Rectangle {
         y: 79
         width: 50
         height: 50
-        color: "#baffa8"
-        border.color: "#0b049d"
+        color: vueObjetCpt.couleur[13]
+        border.color: "#CAE1FF"
         radius: 10
-        border.width: 3
+        border.width: 2
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.verticalCenter: parent.verticalCenter
         anchors.horizontalCenterOffset: -25
@@ -529,10 +539,10 @@ Rectangle {
         y: 76
         width: 50
         height: 50
-        color: "#baffa8"
-        border.color: "#0b049d"
+        color: vueObjetCpt.couleur[14]
+        border.color: "#CAE1FF"
         radius: 10
-        border.width: 3
+        border.width: 2
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.verticalCenter: parent.verticalCenter
         anchors.horizontalCenterOffset: 25
@@ -562,10 +572,10 @@ Rectangle {
         y: 79
         width: 50
         height: 50
-        color: "#baffa8"
-        border.color: "#0b049d"
+        color: vueObjetCpt.couleur[15]
+        border.color: "#CAE1FF"
         radius: 10
-        border.width: 3
+        border.width: 2
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.verticalCenter: parent.verticalCenter
         anchors.horizontalCenterOffset: 75
@@ -629,6 +639,117 @@ Rectangle {
             id: mouseArea2
             width: 50
             height: 50
+        }
+    }
+
+    Rectangle {
+        id: rectangle18
+        x: 55
+        y: 30
+        width: 100
+        height: 40
+        color: "#9ac2f7"
+        radius: 8
+        anchors.verticalCenterOffset: -125
+        anchors.verticalCenter: parent.verticalCenter
+        anchors.horizontalCenterOffset: -75
+        anchors.horizontalCenter: parent.horizontalCenter
+        border.width: 5
+        border.color: "#e0edf2"
+
+        Text {
+            id: text17
+            x: 50
+            y: 14
+            width: 132
+            text: vueObjetCpt.rpoints
+            font.bold: true
+            font.pointSize: 15
+            textFormat: Text.RichText
+            font.pixelSize: 12
+        }
+
+        Text {
+            id: text18
+            x: 8
+            y: 14
+            text: qsTr("Score:")
+            font.bold: true
+            font.pixelSize: 12
+        }
+    }
+
+    Rectangle {
+        id: rectangle19
+        x: 200
+        y: 30
+        width: 100
+        height: 40
+        color: "#9ac2f7"
+        radius: 8
+        anchors.horizontalCenterOffset: 75
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.verticalCenterOffset: -125
+        anchors.verticalCenter: parent.verticalCenter
+        Text {
+            id: text19
+            x: 50
+            y: 14
+            width: 132
+            text: vueObjetCpt.rmax
+            font.bold: true
+            font.pointSize: 15
+            textFormat: Text.RichText
+            font.pixelSize: 12
+        }
+
+        Text {
+            id: text20
+            x: 8
+            y: 14
+            text: qsTr("Max:")
+            font.bold: true
+            font.pixelSize: 12
+        }
+        border.width: 5
+        border.color: "#e0edf2"
+    }
+
+    Rectangle {
+        id: rectangle20
+        x: 80
+        y: 109
+        width: 200
+        height: 202
+        color: "#c4c2fd"
+        radius: 10
+        anchors.verticalCenterOffset: 25
+        anchors.horizontalCenterOffset: 0
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.verticalCenter: parent.verticalCenter
+        visible: vueObjetCpt.fini
+
+        Text {
+            id: text21
+            text: qsTr("Félicitations, vous avez gagné!")
+            font.bold: true
+            font.family: "Arial"
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.verticalCenter: parent.verticalCenter
+            verticalAlignment: Text.AlignTop
+            font.pixelSize: 20
+            visible: vueObjetCpt.finiGagne
+        }
+        Text {
+            id: text22
+            text: qsTr("Vous avez perdu")
+            font.bold: true
+            font.family: "Arial"
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.verticalCenter: parent.verticalCenter
+            verticalAlignment: Text.AlignTop
+            font.pixelSize: 20
+            visible: vueObjetCpt.finiPerdu
         }
     }
 

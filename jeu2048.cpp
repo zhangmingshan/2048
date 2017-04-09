@@ -15,6 +15,60 @@ QList<int> Jeu::readChiffre(){
 
 }
 
+QList<QString> Jeu::readCouleur(){
+   QList <QString> testc;
+    for(int i=0; i<L; i++)
+            for(int j=0; j<C; j++){
+                switch (T[i][j]) {
+                case 0:{
+                    Co[i][j] = "#B0B0B0";
+                    break;}
+                case 1:{
+                    Co[i][j] = "#A4D3EE";
+                    break;}
+                case 2:{
+                    Co[i][j] = "#6495ED";
+                    break;}
+                case 4:{
+                    Co[i][j] = "#98FB98";
+                    break;}
+                case 8:{
+                    Co[i][j] = "#9BCD9B";
+                    break;}
+                case 16:{
+                    Co[i][j] = "#9F79EE";
+                    break;}
+                case 32:{
+                    Co[i][j] = "#9932CC";
+                    break;}
+                case 64:{
+                    Co[i][j] = "#CD5555";
+                    break;}
+                case 128:{
+                    Co[i][j] = "#FFE4C4";
+                    break;}
+                case 256:{
+                    Co[i][j] = "#EEC591";
+                    break;}
+                case 512:{
+                    Co[i][j] = "#F08080";
+                    break;}
+                case 1024:{
+                    Co[i][j] = "#FFFF00";
+                    break;}
+                case 2048:{
+                    Co[i][j] = "#FF0000";
+                    break;}
+                default:
+                    break;
+                }
+                testc.append(Co[i][j]);
+            }
+
+    return QList<QString>(testc);
+
+}
+
 
 int Jeu::apparition_des_nombres1(){
     int a=rand()%L;
@@ -34,11 +88,26 @@ void Jeu::InitJeu()
     for(int i=0; i<L; i++)
             for(int j=0; j<C; j++)
                 T[i][j]=0;
+
+    Co = new QString*[L];
+    for(int i=0; i<L; i++)
+        Co[i] = new QString[C];
+    for(int i=0; i<L; i++)
+            for(int j=0; j<C; j++)
+                Co[i][j]="#B0B0B0";
+
     cptChanged();
 }
 
 void Jeu::Start()
 {
+    int indice = 0;
+    for(int i=0; i<L; i++)
+        for(int j=0; j<C; j++){
+            if(T[i][j]!=0)
+                indice = 1;
+        }
+    if(indice == 0){
     srand(time(NULL));
         for(int i=0;i<500;i++){
             int indice=apparition_des_nombres1();
@@ -51,6 +120,7 @@ void Jeu::Start()
             if(indice2==1)
                 break;
     }
+    }
     cptChanged();
 }
 
@@ -62,6 +132,52 @@ int Jeu::Plein(){
         }
     return 1;
 }
+
+int Jeu::get_maximum(){
+    maximum = 0;
+    for(int i=0; i<L; i++){
+        for(int j=0; j<C; j++){
+            if(T[i][j]>maximum)
+                maximum=T[i][j];
+            }
+    }
+    return maximum;
+}
+
+int Jeu::get_points(){
+    points = 0;
+    for(int i=0; i<L; i++){
+        for(int j=0; j<C; j++){
+            points=points+T[i][j]*int(log2(T[i][j]));
+            }
+    }
+//    str+=ch;
+//    QString str = char(points);
+    return points;
+}
+
+int Jeu::get_statue(){
+    fini = 0;
+    if(Jeu::Plein() == 1)
+        fini = 1;
+    if(Jeu::get_maximum() == 1024)
+        fini = 1;
+    return fini;
+}
+int Jeu::get_statGagne(){
+    finiGagne = 0;
+    if(Jeu::get_maximum() == 1024)
+        finiGagne = 1;
+    return finiGagne;
+}
+
+int Jeu::get_statPerdu(){
+    finiPerdu = 0;
+    if(Jeu::Plein() == 1)
+        finiPerdu = 1;
+    return finiPerdu;
+}
+
 
 int Jeu::AjouteVersLeHaut(){
     int indice=0;
@@ -335,205 +451,4 @@ void Jeu::VersLaGauche(){
 
     cptChanged();
 }
-
-
-//void Jeu::increment() {
-//    for(int i=0; i<X; i++)
-//            for(int j=0; j<Y; j++)
-//                Chiffre[i][j]++;
-//    cptChanged();
-//}
-
-//void Jeu::decrement() {
-//    for(int i=0; i<X; i++)
-//            for(int j=0; j<Y; j++)
-//                Chiffre[i][j]--;
-//    cptChanged();
-//}
-
-
-//Jeu::Jeu(int l, int c, int vm, int value)
-//{
-//    Alloc(l, c);
-//    Max = vm;
-//    Init(value);
-//    InitJeu();
-//}
-
-
-//Jeu::Jeu(const Jeu &D)
-//{
-//    Alloc(D.L, D.C);
-//    for(int i=0; i<L; i++)
-//        for(int j=0; j<C; j++)
-//            T[i][j] = D.T[i][j];
-//}
-
-
-//Jeu::~Jeu(){
-//    if (T != NULL) {
-//        Free();
-//        T = NULL;
-//    }
-//}
-
-//void Jeu::Free(){
-//    for (int i=0; i<L; i++) {
-//        delete [] T[i];
-//    }
-//    delete [] T;
-//}
-
-//void Jeu::Alloc(int l, int c){
-//    L = l;
-//    C = c;
-//    T = new int*[L];
-//    for(int i=0; i<L; i++)
-//        T[i] = new int[C];
-//}
-
-//void Jeu::Print(){
-//    cout << endl;
-//    for(int i=0; i<L; i++) {
-//        cout << endl;
-//        for(int j=0; j<C; j++)
-//            cout << T[i][j] << ", ";
-//    }
-//}
-
-//void Jeu::Init(int value){
-//    /*if ((value<0) || (value>=Max)) {
-//        string file(__FILE__);
-//        string fonction(__PRETTY_FUNCTION__);
-//        borne e(value, Max, file, fonction);
-//        throw(e);
-//    }*/
-//    for(int i=0; i<L; i++)
-//        for(int j=0; j<C; j++)
-//            T[i][j]=value;
-//}
-
-//void Jeu::InitJeu(){
-//    Init(0);
-//    int l1 = rand()%L;
-//    int c1 = rand()%C;
-//    int l2;
-//    int c2;
-//    do{
-//        l2 = rand()%4;
-//        c2 = rand()%4;
-//    }
-//    while (l1==l2||c1==c2);
-
-//}
-
-//void IndiceValide (int x, int y, int l, int c)
-//{
-//    if(x<0||x>l||y<0||y>c)
-//        throw("Acces case du Damier incorrecte");
-//}
-
-//void Jeu::Set(int x, int y, int value) {
-
-//    /*if (value<0||value>Max)
-//    {
-//        string file(__FILE__);
-//        string fonction(__PRETTY_FUNCTION__);
-//        borne e(value,Max,file,fonction);
-//        throw (e);
-//    }*/
-//    IndiceValide(x,y,L,C);
-//    T[x][y]=value;
-//}
-
-
-//void Jeu::ReDim(int l, int c, int vd) {
-//    Free();
-//    Alloc(l, c);
-//    Init(vd);
-//}
-
-// /*void Jeu::Aleatoire(){
-//    int l;
-//    int c;
-//    int n;
-//    do{
-//    l = rand()/4;
-//    c = rand()/4;
-//    n;
-//    for(int i=0; i<L; i++)
-//        for(int j=0; j<C; j++)
-//        {
-//            n = T[i][j];
-//        }
-//    }
-//    while(n!=0);
-//    T[l][c] = 2;
-//}*/
-
-
-//Jeu& Jeu::operator= (const Jeu &D){
-//    if ( this != &D) { // protection autoréférence
-//        Free();
-//        Alloc(D.L, D.C);
-//        for(int i=0; i<L; i++)
-//            for(int j=0; j<C; j++)
-//                T[i][j] = D.T[i][j];
-//    }
-//    return *this;
-//}
-
-//bool Jeu::sameDimensions (const Jeu &D) {
-//    if ((L == D.L) && (C == D.C))
-//        return true;
-//    return false;
-//}
-
-//Jeu& Jeu::operator+= (int c)
-//{
-//    for(int i=0; i<L; i++)
-//        for(int j=0; j<C; j++)
-//            T[i][j] += c;
-//    return *this;
-//}
-
-//Jeu& Jeu::operator+= (const Jeu &D)
-//{
-//    if (!sameDimensions(D)){
-//        cerr << endl << __PRETTY_FUNCTION__ << " - Dimensions différentes !\n";
-//        exit(1);
-//    }
-//    for(int i=0; i<L; i++)
-//        for(int j=0; j<C; j++)
-//            T[i][j] += D.T[i][j];
-//    return *this;
-//}
-
-
-//Jeu Jeu::operator+ (const Jeu &D1)
-//{
-//    if (!sameDimensions(D1)){
-//        cerr << endl << __PRETTY_FUNCTION__ << " - Dimensions différentes !\n";
-//        exit(1);
-//    }
-
-//    Jeu D(D1.L, D1.C,Max);
-//    for(int i=0; i<L; i++)
-//        for(int j=0; j<C; j++)
-//            D.T[i][j] = T[i][j]+D1.T[i][j];
-
-//    return D;
-//}
-
-//ostream& operator<< (ostream& sortie, Jeu& V)
-//{
-//    sortie << endl;
-//    for(int i=0; i<V.L; i++) {
-//        sortie << endl;
-//        for(int j=0; j<V.C; j++)
-//            sortie << V.T[i][j] << ", ";
-//    }
-
-//    return sortie;
-//}
 
