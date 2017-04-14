@@ -151,8 +151,6 @@ int Jeu::get_points(){
             points=points+T[i][j]*int(log2(T[i][j]));
             }
     }
-//    str+=ch;
-//    QString str = char(points);
     return points;
 }
 
@@ -225,12 +223,6 @@ void Jeu::VersLeHaut(){
     }
     if(!Plein()){
         srand(time(NULL));
-//        for(int i=0;i<500;i++){
-//            int indice=apparition_des_nombres1();
-//            if(indice==1)
-//                break;
-//        }
-
         if(indice){
             apparition_des_nombres1();
         }
@@ -240,13 +232,6 @@ void Jeu::VersLeHaut(){
     if(FiniJeu()){
         cout<<'fini';
         return;}
-
-//    for(int i=0;i<5000;i++){
-//        int indice=AjouteVersLeHaut();
-//        if(indice==0)
-//            break;
-//    }
-
     cptChanged();
 }
 
@@ -304,24 +289,12 @@ void Jeu::VersLeBas(){
     }
     if(!Plein()){
         srand(time(NULL));
-//        for(int i=0;i<500;i++){
-//            int indice=apparition_des_nombres1();
-//            if(indice==1)
-//                break;
-//        }
-
         if(indice == 1)
             apparition_des_nombres1();
     }
     if(FiniJeu()){
         cout<<'fini';
         return;}
-
-//    for(int i=0;i<5000;i++){
-//        int indice=AjouteVersLeBas();
-//        if(indice==0)
-//            break;
-//}
 
     cptChanged();
 }
@@ -368,25 +341,12 @@ void Jeu::VersLaDroit(){
     }
     if(!Plein()){
         srand(time(NULL));
-//        for(int i=0;i<500;i++){
-//            int indice=apparition_des_nombres1();
-//            if(indice==1)
-//                break;
-//        }
-
         if(indice == 1)
             apparition_des_nombres1();
     }
     if(FiniJeu()){
         cout<<'fini';
         return;}
-
-//    for(int i=0;i<5000;i++){
-//        int indice=AjouteVersLaDroit();
-//        if(indice==0)
-//            break;
-//    }
-
     cptChanged();
 }
 
@@ -430,24 +390,12 @@ void Jeu::VersLaGauche(){
     }
     if(!Plein()){
         srand(time(NULL));
-//        for(int i=0;i<500;i++){
-//            int indice=apparition_des_nombres1();
-//            if(indice==1)
-//                break;
-//        }
-
         if (indice == 1)
             apparition_des_nombres1();
     }
     if(FiniJeu()){
         cout<<'fini';
         return;}
-
-//    for(int i=0;i<5000;i++){
-//        int indice=AjouteVersLaGauche();
-//        if(indice==0)
-//            break;
-//    }
 
     cptChanged();
 }
