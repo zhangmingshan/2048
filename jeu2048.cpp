@@ -148,7 +148,7 @@ int Jeu::get_points(){
     points = 0;
     for(int i=0; i<L; i++){
         for(int j=0; j<C; j++){
-            points=points+T[i][j]*int(log2(T[i][j]));
+            points=points+T[i][j]*int(log(T[i][j])/log(2));
             }
     }
     return points;
